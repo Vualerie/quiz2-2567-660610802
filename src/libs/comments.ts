@@ -1,3 +1,5 @@
+import { ReplyProps } from "./types";
+
 export const comments = [
   {
     username: "Lisa",
