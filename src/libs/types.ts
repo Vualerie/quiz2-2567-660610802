@@ -6,6 +6,7 @@ interface ReplyProps {
     username: string;
     replyText: string;
     likeNum: number;
+    id:string;
 }
 
 interface commentsProps {
@@ -14,6 +15,7 @@ interface commentsProps {
     commentText: string;
     likeNum: number;
     replies: ReplyProps[];
+    id:string;
 }
 
 export type { ReplyProps };
