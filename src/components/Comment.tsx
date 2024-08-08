@@ -37,7 +37,7 @@ export default function Comment({
     </div>
     <div>{replies && replies.map((reply,i) => (
               <Reply 
-                  id={reply.username + i}
+                  key={reply.username + i}
                   userImagePath={reply.userImagePath}
                   username={reply.username}
                   replyText={reply.replyText}
