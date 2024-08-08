@@ -10,6 +10,7 @@ export default function Comment({
   replies,
 }: commentsProps) {
   return (
+    <div>
     <div className="d-flex gap-2 my-2">
           <img
             src={userImagePath}
@@ -28,11 +29,13 @@ export default function Comment({
             <br />
             <span style={{ color: "#E4E6EB" }}>{commentText}</span>
             <div className="d-flex align-items-center gap-1">
-              <img src="/like.svg" width={20}></img>
-              <span style={{ color: "#B0B3B8" }}>{likeNum} คน</span>
+              { likeNum > 0 && <img src="/like.svg" width={20}></img>}
+              {likeNum > 0 && <span style={{ color: "#B0B3B8" }}>{likeNum} คน</span>}
             </div>
           </div>
-            {replies && replies.map((reply) => (
+
+    </div>
+    <div>{replies && replies.map((reply) => (
               <Reply 
                   
                   userImagePath={reply.userImagePath}
@@ -40,7 +43,7 @@ export default function Comment({
                   replyText={reply.replyText}
                   likeNum={reply.likeNum} />
             )) }
-          
+    </div>
     </div>
   );
 }
